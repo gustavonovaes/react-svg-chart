@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>React SVG Chart</title>
+
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <!-- Don't use this in production: -->
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
+  <link rel="stylesheet"
+        href="./linechart.css">
+
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root {
+      width: 50vw;
+      height: 50vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel"
+          src="./LineChart.js"></script>
+
+  <script type="text/babel">
+    const labels = ['A', 'B', 'C', 'D'];
+
+    const value = () => Math.round((Math.random() * 50) + 1, 2);
+
+    const data = labels.reduce(
+      (data, label) => 
+        [...data, [value(), label]], 
+      []
+    );
+
+    ReactDOM.render(
+      <LineChart data={data} />,
+      document.getElementById('root')
+    );
+  </script>
+</body>
+
+</html>

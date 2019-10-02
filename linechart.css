@@ -1,0 +1,61 @@
+:root {
+    --primary: #4BB543;
+    --secondary: #F3F3F3;
+
+    --font-size: 14px;
+}
+
+.linechart {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    font-variant-numeric: tabular-nums;
+}
+
+.linechart-x-line {
+    background-color: var(--secondary);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    width: 1px;
+}
+
+.linechart-x-label {
+    bottom: -20px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+}
+
+.linechart-x-value {
+    background-color: var(--secondary);
+    border-radius: 4px;
+    color:var(--primary);
+    font-weight: 600;
+    left: 50%;
+    padding: 0 3px;
+    position: absolute;
+    text-align: center;
+    transform: translateX(-50%) translateY(6px);
+    z-index: 10;
+    font-size: var(--font-size);
+}
+
+.linechart-y-line {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--secondary);
+    font-size: var(--font-size);
+}
+
+.linechart-y-label {
+    transform: translateX(-15px) translateY(-7px);
+}
+
+.linechart-chart {
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
